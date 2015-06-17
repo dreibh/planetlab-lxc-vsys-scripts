@@ -190,7 +190,7 @@ static int _fifo_push (const char *fifo_in, const char *fifo_out,
   }
 
   // send inputs to the fifo_in
-  fprintf (in, input);
+  fputs (input, in);
 
   // force flush and close the fifo_in so the program on the other side
   // can process input.
@@ -199,7 +199,7 @@ static int _fifo_push (const char *fifo_in, const char *fifo_out,
   nbytes = fread(msg, SIZE, 1, out);
  
   // the error buffer will not be empty if we read an error
-  if (strcmp(msg, "") != 0){
+  if ((nbytes > 0) && (strcmp(msg, "") != 0)) {
       // an errror was read from the fifo_out ...
       return -3;
   }
@@ -281,7 +281,7 @@ int _fd_tuntap(int if_type, int no_pi, char *if_name) {
   vsys_sock = socket (AF_UNIX, SOCK_STREAM, 0);
 
   if (vsys_sock == -1){
-    snprintf (if_name, SIZE, strerror(errno));
+    snprintf (if_name, SIZE, "%s", strerror(errno));
     return -2;
   }
 
@@ -294,7 +294,7 @@ int _fd_tuntap(int if_type, int no_pi, char *if_name) {
     sizeof(struct sockaddr_un));
 
   if (ret == -1){
-    snprintf (if_name, SIZE, strerror(errno));
+    snprintf (if_name, SIZE, "%s", strerror(errno));
     return -3;
   }
  
