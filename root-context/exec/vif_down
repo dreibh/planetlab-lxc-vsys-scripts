@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python2
 # VSYS script to ifdown per-slice virtual network interfaces from the root slice
 #   Thom Haddow - 06/10/09
 #

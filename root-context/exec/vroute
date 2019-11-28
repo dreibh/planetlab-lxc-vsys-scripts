@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python2
 # VSYS script to configure routes on virtual network interfaces from the root slice
 #   Claudio Freire - 2011/05/19
 #

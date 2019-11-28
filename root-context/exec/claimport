@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python2
 # Lets a user kill processes bound to
 # ports in his assigned port range. To assign a port
 # range, set the vsys_portreservation attribute for that user.
