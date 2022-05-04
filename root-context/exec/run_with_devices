@@ -1,4 +1,4 @@
-#!/usr/bin/python -u
+#!/usr/bin/python2 -u
 # All vsys scripts should use STDOUT in unbuferred mode, or else sometimes your output will get bufferred and you will not see it till the buffer gets flushed.  
 
 import sys

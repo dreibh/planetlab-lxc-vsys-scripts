@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python2
 # Lets a user loopback-mount a private fs of a given type.
 # To use, configure the following vsys-attributes in addition to setting the vsys tag for the slice
 # - vsys_privatefs_list -> comma-separated list of desired filesystems, e.g. xfs,btrfs

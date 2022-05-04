@@ -190,7 +190,7 @@ static int _fifo_push (const char *fifo_in, const char *fifo_out,
   }
 
   // send inputs to the fifo_in
-  fputs (input, in);
+  fprintf (in, "%s", input);
 
   // force flush and close the fifo_in so the program on the other side
   // can process input.
@@ -321,7 +321,7 @@ int _fd_tuntap(int if_type, int no_pi, char *if_name) {
   ret = ioctl (fd, TUNGETIFF, (void *)&ifr);
   if (ret == -1){
     close (fd);
-    snprintf (if_name, SIZE, strerror(errno));
+    snprintf (if_name, SIZE, "%s", strerror(errno));
     return -6;
   }
   
@@ -338,7 +338,7 @@ int _fd_tuntap(int if_type, int no_pi, char *if_name) {
   ret = ioctl (fd, TUNSETIFF, (void *)&ifr);
   if (ret == -1){
     close (fd);
-    snprintf (if_name, SIZE, strerror(errno));
+    snprintf (if_name, SIZE, "%s", strerror(errno));
     return -7;
   }
 */

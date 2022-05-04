@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python2
 # Vsys script to set a device in promisc mode
 # The user needs to have the device allocated to him
 # via the vsys_vnet tag. Set vsys_vnet to the IP address of
